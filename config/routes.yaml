@@ -3,3 +3,9 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+calculator_add:
+    path: /add/{a}/{b}
+    controller: 'App\Controller\CalculatorController::add'
+    requirements:
+        a: '-?\d+(\.\d+)?'
+        b: '-?\d+(\.\d+)?'
