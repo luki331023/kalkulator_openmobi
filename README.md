@@ -24,3 +24,14 @@ As {a} and {b} you can use both integers and floats.
 Example: http://localhost:8080/add/1.5/2.5
 
 Response example (JSON): ```{"result":4}```
+
+## Tests
+While in the container, simply ```composer test``` to run phpunit tests.
+
+## Other commands
+- ```bin/task start``` - starts the project
+- ```bin/task stop``` - stops the project
+- ```bin/task enter-php``` - enters the php container
+- ```composer test``` - runs phpunit tests (while in the container)
+- ```composer phpcsfixer``` - runs php-cs-fixer on .src (while in the container)
+- ```composer lint``` - runs phpstan on .src (while in the container)
