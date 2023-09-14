@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Services\CalculatorService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class CalculatorController extends AbstractController
 {
@@ -17,5 +18,23 @@ class CalculatorController extends AbstractController
     public function add($a, $b): JsonResponse
     {
         return $this->json(['result' => $this->calculatorService->add($a, $b)]);
+    }
+
+    public function sub($a, $b): JsonResponse
+    {
+        return $this->json(['result' => $this->calculatorService->sub($a, $b)]);
+    }
+
+    public function mul($a, $b): JsonResponse
+    {
+        return $this->json(['result' => $this->calculatorService->mul($a, $b)]);
+    }
+
+    public function div($a, $b): JsonResponse
+    {
+        if ($b == 0) {
+            return $this->json(['error' => 'Division by zero.'], Response::HTTP_BAD_REQUEST);
+        }
+        return $this->json(['result' => $this->calculatorService->div($a, $b)]);
     }
 }

@@ -9,3 +9,21 @@ calculator_add:
     requirements:
         a: '-?\d+(\.\d+)?'
         b: '-?\d+(\.\d+)?'
+calculator_subtract:
+    path: /sub/{a}/{b}
+    controller: 'App\Controller\CalculatorController::sub'
+    requirements:
+        a: '-?\d+(\.\d+)?'
+        b: '-?\d+(\.\d+)?'
+calculator_multiply:
+    path: /mul/{a}/{b}
+    controller: 'App\Controller\CalculatorController::mul'
+    requirements:
+        a: '-?\d+(\.\d+)?'
+        b: '-?\d+(\.\d+)?'
+calculator_divide:
+    path: /div/{a}/{b}
+    controller: 'App\Controller\CalculatorController::div'
+    requirements:
+        a: '-?\d+(\.\d+)?'
+        b: '-?\d+(\.\d+)?'
