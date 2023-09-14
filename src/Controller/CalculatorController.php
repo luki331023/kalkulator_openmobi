@@ -11,8 +11,7 @@ class CalculatorController extends AbstractController
 {
     public function __construct(
         private CalculatorService $calculatorService
-    )
-    {
+    ) {
     }
 
     public function add(int|float $a, int|float $b): JsonResponse
@@ -32,9 +31,10 @@ class CalculatorController extends AbstractController
 
     public function div(int|float $a, int|float $b): JsonResponse
     {
-        if ($b == 0) {
+        if (0 == $b) {
             return $this->json(['error' => 'Division by zero.'], Response::HTTP_BAD_REQUEST);
         }
+
         return $this->json(['result' => $this->calculatorService->div($a, $b)]);
     }
 }
