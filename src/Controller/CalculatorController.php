@@ -15,22 +15,22 @@ class CalculatorController extends AbstractController
     {
     }
 
-    public function add($a, $b): JsonResponse
+    public function add(int|float $a, int|float $b): JsonResponse
     {
         return $this->json(['result' => $this->calculatorService->add($a, $b)]);
     }
 
-    public function sub($a, $b): JsonResponse
+    public function sub(int|float $a, int|float $b): JsonResponse
     {
         return $this->json(['result' => $this->calculatorService->sub($a, $b)]);
     }
 
-    public function mul($a, $b): JsonResponse
+    public function mul(int|float $a, int|float $b): JsonResponse
     {
         return $this->json(['result' => $this->calculatorService->mul($a, $b)]);
     }
 
-    public function div($a, $b): JsonResponse
+    public function div(int|float $a, int|float $b): JsonResponse
     {
         if ($b == 0) {
             return $this->json(['error' => 'Division by zero.'], Response::HTTP_BAD_REQUEST);

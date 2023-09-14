@@ -10,25 +10,25 @@ class CalculatorService
     {
     }
 
-    public function add($a, $b): int|float
+    public function add(int|float $a, int|float $b): int|float
     {
         $this->logger->info('Addition operation $a + $b.');
         return $a + $b;
     }
 
-    public function sub($a, $b): int|float
+    public function sub(int|float $a, int|float $b): int|float
     {
         $this->logger->info('Subtraction operation $a - $b.');
         return $a - $b;
     }
 
-    public function mul($a, $b): int|float
+    public function mul(int|float $a, int|float $b): int|float
     {
         $this->logger->info('Multiplication operation $a * $b.');
         return $a * $b;
     }
 
-    public function div($a, $b): int|float
+    public function div(int|float $a, int|float $b): int|float
     {
         if ($b == 0) {
             $this->logger->error('Division by zero.');
